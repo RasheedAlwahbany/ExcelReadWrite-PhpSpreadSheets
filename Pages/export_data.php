@@ -60,7 +60,7 @@ function ExportData($table)
 <div class="container ">
     <div class="navbar-light bg-light" role="navigation">
         <div class="container-fluid">
-<h2>Export Data </h2><br/>
+            <h2>Export Data </h2><br />
         </div>
     </div>
     <div class="navbar-light bg-light" role="navigation">
@@ -79,7 +79,7 @@ function ExportData($table)
                                 if ($query->execute()) {
                                     $i = 1;
                                     while ($row = $query->fetchObject()) { ?>
-                                        <li class="list-group-item <?php if(str_contains($_SERVER['REQUEST_URI'],'='.$row->Tables_in_maintenances_supervisor_dbms.'')) echo "active"; ?>"><a class="dropdown-item  <?php if(str_contains($_SERVER['REQUEST_URI'],'='.$row->Tables_in_maintenances_supervisor_dbms.'')) echo "active"; ?>" href="?Controller=<?php echo $row->Tables_in_maintenances_supervisor_dbms; ?>">
+                                        <li class="list-group-item <?php if (str_contains($_SERVER['REQUEST_URI'], '=' . $row->Tables_in_maintenances_supervisor_dbms . '')) echo "active"; ?>"><a class="dropdown-item  <?php if (str_contains($_SERVER['REQUEST_URI'], '=' . $row->Tables_in_maintenances_supervisor_dbms . '')) echo "active"; ?>" href="?Controller=<?php echo $row->Tables_in_maintenances_supervisor_dbms; ?>">
                                                 <?php echo " Table ( " . $i . " ) => " . $row->Tables_in_maintenances_supervisor_dbms; ?>
                                             </a></li>
                             <?php $i = $i + 1;
@@ -94,8 +94,8 @@ function ExportData($table)
                     <a class="nav-link" aria-current="page" href="?Controller=All">Export all database tables backup</a>
                 </li>
             </ul>
-            </div>
-            <div class="container ">
+        </div>
+        <div class="container ">
             <h1>
                 Operation logs:
             </h1>
@@ -120,7 +120,6 @@ function ExportData($table)
             }
 
             ?>
-            </div>
         </div>
     </div>
-    
+</div>

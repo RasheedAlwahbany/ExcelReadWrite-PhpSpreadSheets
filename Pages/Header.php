@@ -30,12 +30,13 @@ function getCellName($i)
 
     return $col;
 }
-if(!str_contains($_SERVER['REQUEST_URI'],"export") && !str_contains($_SERVER['REQUEST_URI'],"import"))
-    $dir='';
+if (!str_contains($_SERVER['REQUEST_URI'], "export") && !str_contains($_SERVER['REQUEST_URI'], "import"))
+    $dir = '';
 else
-    $dir="../";
+    $dir = "../";
 ?>
 <html>
+
 <head>
     <title>Excel Import/Export Data</title>
     <meta charset="utf-8">
@@ -56,31 +57,31 @@ else
             <div class="navbar-header">
                 <a class="navbar-brand" href="https://github.com/RasheedAlwahbany">Eng.Rasheed Al-Wahbany</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </div>
             <ul class="nav nav-tabs collapse navbar-collapse">
-                <li class="nav-item <?php if(!str_contains($_SERVER['REQUEST_URI'],"export") && !str_contains($_SERVER['REQUEST_URI'],"import")) echo "active"; ?>">
-                    <a class="nav-link <?php if(!str_contains($_SERVER['REQUEST_URI'],"export") && !str_contains($_SERVER['REQUEST_URI'],"import")) echo "active"; ?>" aria-current="page" href="/">Home</a>
+                <li class="nav-item <?php if (!str_contains($_SERVER['REQUEST_URI'], "export") && !str_contains($_SERVER['REQUEST_URI'], "import")) echo "active"; ?>">
+                    <a class="nav-link <?php if (!str_contains($_SERVER['REQUEST_URI'], "export") && !str_contains($_SERVER['REQUEST_URI'], "import")) echo "active"; ?>" aria-current="page" href="/">Home</a>
                 </li>
-                <li class="nav-item <?php if(str_contains($_SERVER['REQUEST_URI'],"export")) echo "active"; ?>">
-                    <a class="nav-link <?php if(str_contains($_SERVER['REQUEST_URI'],"export")) echo "active"; ?>" href="/Pages/export_data.php">Export Data To Excel</a>
+                <li class="nav-item <?php if (str_contains($_SERVER['REQUEST_URI'], "export")) echo "active"; ?>">
+                    <a class="nav-link <?php if (str_contains($_SERVER['REQUEST_URI'], "export")) echo "active"; ?>" href="/Pages/export_data.php">Export Data To Excel</a>
                 </li>
-                <li class="nav-item  <?php if(str_contains($_SERVER['REQUEST_URI'],"import")) echo "active"; ?>">
-                    <a class="nav-link <?php if(str_contains($_SERVER['REQUEST_URI'],"import")) echo "active"; ?>" href="/Pages/import_data.php">Import Data From Excel</a>
+                <li class="nav-item  <?php if (str_contains($_SERVER['REQUEST_URI'], "import")) echo "active"; ?>">
+                    <a class="nav-link <?php if (str_contains($_SERVER['REQUEST_URI'], "import")) echo "active"; ?>" href="/Pages/import_data.php">Import Data From Excel</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Info</a>
                 </li>
             </ul>
         </div>
-</nav>
+    </nav>
 
 
     <?php
-    
+
     $connection = new pdo("mysql:host=localhost;dbname=maintenances_supervisor_dbms;port=3306;charset=utf8", "root", "");
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, true);
-    if(!is_dir('../DataBackup'))
+    if (!is_dir('../DataBackup'))
         mkdir("../DataBackup");

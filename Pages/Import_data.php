@@ -10,12 +10,12 @@ $reader->setReadDataOnly(true);
 
 ?>
 
-        <div class="container ">
-        <div class="navbar-light bg-light" role="navigation">
+<div class="container ">
+    <div class="navbar-light bg-light" role="navigation">
         <div class="container-fluid">
-        <h2>Import Data</h2> <br/>
+            <h2>Import Data</h2> <br />
         </div>
-        </div>
+    </div>
     <div class="navbar-light bg-light" role="navigation">
         <div class="container-fluid">
             <ul class="nav nav-tabs">
@@ -33,7 +33,7 @@ $reader->setReadDataOnly(true);
                                     $i = 1;
                                     while ($row = $query->fetchObject()) {
                                         if (!str_contains($row->Tables_in_maintenances_supervisor_dbms, "view") && !str_contains($row->Tables_in_maintenances_supervisor_dbms, "_v_")) { ?>
-                                            <li class="list-group-item <?php if(str_contains($_SERVER['REQUEST_URI'],'='.$row->Tables_in_maintenances_supervisor_dbms.'')) echo "active"; ?>"><a class="dropdown-item  <?php if(str_contains($_SERVER['REQUEST_URI'],'='.$row->Tables_in_maintenances_supervisor_dbms.'')) echo "active"; ?>" href="?Controller=<?php echo $row->Tables_in_maintenances_supervisor_dbms; ?>">
+                                            <li class="list-group-item <?php if (str_contains($_SERVER['REQUEST_URI'], '=' . $row->Tables_in_maintenances_supervisor_dbms . '')) echo "active"; ?>"><a class="dropdown-item  <?php if (str_contains($_SERVER['REQUEST_URI'], '=' . $row->Tables_in_maintenances_supervisor_dbms . '')) echo "active"; ?>" href="?Controller=<?php echo $row->Tables_in_maintenances_supervisor_dbms; ?>">
                                                     <?php echo " Table ( " . $i . " ) => " . $row->Tables_in_maintenances_supervisor_dbms; ?>
                                                 </a></li>
                             <?php $i = $i + 1;
@@ -48,9 +48,9 @@ $reader->setReadDataOnly(true);
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="?Controller=All">Import all database tables backup</a>
                 </li>
-                </ul>
-            </div>
-            <div class="container ">
+            </ul>
+        </div>
+        <div class="container ">
             <h1>
                 Operation logs:
             </h1>
@@ -191,6 +191,6 @@ $reader->setReadDataOnly(true);
             }
             ?>
 
-</div>
         </div>
     </div>
+</div>
