@@ -1,14 +1,10 @@
-<<<<<<< HEAD
 
-# ReadWrite-PhpSpreadSheetsFull
+# Excel Read Write (PhpSpreadSheets)
 
 PhpSpreadsheet is a library written in pure PHP and offers a set of classes that
 allow you to read and write various spreadsheet file formats such as Excel and LibreOffice Calc.
 
 ## PHP version support
-
-LTS: Support for PHP versions will only be maintained for a period of six months beyond the
-[end of life of that PHP version](https://www.php.net/eol.php).
 
 Currently the required PHP minimum version is PHP __7.3__ or higher.
 
@@ -65,6 +61,11 @@ If you want to write to PDF, or to include Charts when you write to HTML or PDF,
 
 Export data from **MySQL DB** into **Excel Files**.
 
+## Import Data
+
+import data from **Excel Files** into **MySQL DB**.
+
+
 ## Documentation
 
 Read more about it, including install instructions, in the [official documentation](https://phpspreadsheet.readthedocs.io). Or check out the [API documentation](https://phpoffice.github.io/PhpSpreadsheet).
@@ -75,9 +76,9 @@ Please ask your support questions on [StackOverflow](https://stackoverflow.com/q
 
 PhpSpreadsheet is the next version of PHPExcel. It breaks compatibility to dramatically improve the code base quality (namespaces, PSR compliance, use of latest PHP language features, etc.).
 
-# Read Write - Php Spread Sheets Full
+# Excel Read Write - Php Spread Sheets 
 
-Read Write PHP Spread Sheets Full
+Excel Read Write PHP Spread Sheets Full
 
 >>>>>>> ea14110a0112a8aa2ab7923733885dc10bdbc6e8
 >>>>>>>
