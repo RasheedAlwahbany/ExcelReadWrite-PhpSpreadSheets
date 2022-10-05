@@ -79,11 +79,3 @@ PhpSpreadsheet is the next version of PHPExcel. It breaks compatibility to drama
 # Excel Read Write - Php Spread Sheets 
 
 Excel Read Write PHP Spread Sheets Full
-
->>>>>>> ea14110a0112a8aa2ab7923733885dc10bdbc6e8
->>>>>>>
->>>>>>
->>>>>
->>>>
->>>
->>
