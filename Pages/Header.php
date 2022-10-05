@@ -52,10 +52,10 @@ else
 </head>
 
 <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="https://github.com/RasheedAlwahbany">Eng.Rasheed Al-Wahbany</a>
+                <a class="navbar-brand" href="https://github.com/RasheedAlwahbany">Eng.Rasheed Al-Wahbany &copy;2022</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -71,7 +71,7 @@ else
                     <a class="nav-link <?php if (str_contains($_SERVER['REQUEST_URI'], "import")) echo "active"; ?>" href="/Pages/import_data.php">Import Data From Excel</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Info</a>
+                    <a class="nav-link" href="#page-logs">Operation logs</a>
                 </li>
             </ul>
         </div>

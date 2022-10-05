@@ -95,7 +95,7 @@ function ExportData($table)
                 </li>
             </ul>
         </div>
-        <div class="container ">
+        <div class="container " id="page-logs">
             <h1>
                 Operation logs:
             </h1>
@@ -104,7 +104,6 @@ function ExportData($table)
             if (!empty($_GET['Controller'])) {
                 $error = false;
                 if ($_GET['Controller'] != "All") {
-                    // if(!str_contains($row->Tables_in_maintenances_supervisor_dbms, "view"))
                     $error = ExportData($_GET['Controller']);
                 } else {
                     $query = $connection->prepare("SHOW TABLES FROM `maintenances_supervisor_dbms` ");
@@ -123,3 +122,5 @@ function ExportData($table)
         </div>
     </div>
 </div>
+
+<?php include("footer.php");?>

@@ -16,7 +16,7 @@ require_once 'Pages/Header.php';
 
 <body class="container">
     <div class="navbar-light bg-light" role="navigation">
-        <div class="container-fluid">
+        <div class="container-fluid"><br/><br/><br/><br/>
             <h2>Welcome to Export/Import Data To/From Excel files From/To Mysql Database</h2>
             <p>
                 Created using:
@@ -33,3 +33,5 @@ require_once 'Pages/Header.php';
 </body>
 
 </html>
+
+<?php include("Pages/footer.php");?>

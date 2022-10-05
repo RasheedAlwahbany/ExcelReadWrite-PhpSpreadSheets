@@ -50,7 +50,7 @@ $reader->setReadDataOnly(true);
                 </li>
             </ul>
         </div>
-        <div class="container ">
+        <div class="container " id="page-logs">
             <h1>
                 Operation logs:
             </h1>
@@ -194,3 +194,4 @@ $reader->setReadDataOnly(true);
         </div>
     </div>
 </div>
+<?php include("footer.php");?>
