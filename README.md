@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+
 # ReadWrite-PhpSpreadSheetsFull
 
 PhpSpreadsheet is a library written in pure PHP and offers a set of classes that
@@ -15,18 +16,20 @@ See the `composer.json` for other requirements.
 
 ## Installation
 
-Use [composer](https://getcomposer.org) to install PhpSpreadsheet into your project: <br/>
+Use [composer](https://getcomposer.org) to install PhpSpreadsheet into your project: `<br/>`
 or by cmd:
 
 `php -r "readfile('https://getcomposer.org/installer');" | php`
-<br/>
+`<br/>`
 
 `composer require yidas/phpspreadsheet-helper`
+
 ```sh
 composer require phpoffice/phpspreadsheet
 ```
 
 If you are building your installation on a development machine that is on a different PHP version to the server where it will be deployed, or if your PHP CLI version is not the same as your run-time such as `php-fpm` or Apache's `mod_php`, then you might want to add the following to your `composer.json` before installing:
+
 ```json
 {
     "require": {
@@ -39,22 +42,24 @@ If you are building your installation on a development machine that is on a diff
     }
 }
 ```
+
 and then run
+
 ```sh
 composer install
 ```
+
 to ensure that the correct dependencies are retrieved to match your deployment environment.
 
 See [CLI vs Application run-time](https://php.watch/articles/composer-platform-check) for more details.
 
 ## Runnig on localhost
 
-`php -S localhost:8000 -t samples`
+`php -S localhost:8000`
 
 ### Additional Installation Options
 
 If you want to write to PDF, or to include Charts when you write to HTML or PDF, then you will need to install additional libraries:
-
 
 ## Export Data
 
@@ -69,7 +74,15 @@ Please ask your support questions on [StackOverflow](https://stackoverflow.com/q
 ## PHPExcel vs PhpSpreadsheet ?
 
 PhpSpreadsheet is the next version of PHPExcel. It breaks compatibility to dramatically improve the code base quality (namespaces, PSR compliance, use of latest PHP language features, etc.).
-=======
+
 # Read Write - Php Spread Sheets Full
+
 Read Write PHP Spread Sheets Full
+
 >>>>>>> ea14110a0112a8aa2ab7923733885dc10bdbc6e8
+>>>>>>>
+>>>>>>
+>>>>>
+>>>>
+>>>
+>>
