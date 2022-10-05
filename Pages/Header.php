@@ -1,9 +1,7 @@
 <?php
-
-// use PhpOffice\PhpSpreadsheet\Helper\Sample;
+// Eng.Rasheed Al-Wahbany &copy;2022
 
 error_reporting(E_ALL);
-
 
 $columns = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
 function getCellName($i)
@@ -85,3 +83,5 @@ else
     $connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, true);
     if (!is_dir('../DataBackup'))
         mkdir("../DataBackup");
+
+ // Eng.Rasheed Al-Wahbany &copy;2022

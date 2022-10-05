@@ -1,5 +1,5 @@
 <?php
-
+// Eng.Rasheed Al-Wahbany &copy;2022
 require_once 'Header.php';
 require '../vendor/autoload.php';
 
@@ -126,3 +126,4 @@ function ExportData($table)
 </div>
 
 <?php include("footer.php");?>
+<!-- Eng.Rasheed Al-Wahbany &copy;2022 -->
