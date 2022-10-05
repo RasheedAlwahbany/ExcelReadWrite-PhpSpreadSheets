@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ReadWrite-PhpSpreadSheetsFull
 
 PhpSpreadsheet is a library written in pure PHP and offers a set of classes that
@@ -68,3 +69,7 @@ Please ask your support questions on [StackOverflow](https://stackoverflow.com/q
 ## PHPExcel vs PhpSpreadsheet ?
 
 PhpSpreadsheet is the next version of PHPExcel. It breaks compatibility to dramatically improve the code base quality (namespaces, PSR compliance, use of latest PHP language features, etc.).
+=======
+# Read Write - Php Spread Sheets Full
+Read Write PHP Spread Sheets Full
+>>>>>>> ea14110a0112a8aa2ab7923733885dc10bdbc6e8

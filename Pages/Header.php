@@ -50,17 +50,17 @@ function getCellName($i)
     <div class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">PHPSpreadsheet</a>
+                <a class="navbar-brand" href="https://github.com/RasheedAlwahbany">Eng.Rasheed Al-Wahbany</a>
             </div>
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Pages/export_data.php">Export Data To Excel</a>
+                    <a class="nav-link" href="/Pages/export_data.php">Export Data To Excel</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Pages/import_data.php">Import Data From Excel</a>
+                    <a class="nav-link" href="/Pages/import_data.php">Import Data From Excel</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Info</a>
