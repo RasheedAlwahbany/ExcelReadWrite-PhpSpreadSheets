@@ -51,9 +51,10 @@ $reader->setReadDataOnly(true);
             </ul>
         </div>
         <div class="container " id="page-logs">
-            <h1>
+        <br/>
+            <h2>
                 Operation logs:
-            </h1>
+            </h2>
             <?php
             if (!empty($_GET['Controller'])) {
                 function updateItem($table, $table_columns)
@@ -190,7 +191,7 @@ $reader->setReadDataOnly(true);
                 }
             }
             ?>
-
+<br/>
         </div>
     </div>
 </div>
