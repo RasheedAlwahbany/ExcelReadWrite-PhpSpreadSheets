@@ -10,18 +10,22 @@ $reader->setReadDataOnly(true);
 
 ?>
 
-<div class="container">
-    <div class="navbar navbar-default" role="navigation">
+        <div class="container ">
+        <div class="navbar-light bg-light" role="navigation">
         <div class="container-fluid">
-        Import Data <br/>
+        <h2>Import Data</h2> <br/>
+        </div>
+        </div>
+    <div class="navbar-light bg-light" role="navigation">
+        <div class="container-fluid">
             <ul class="nav nav-tabs">
 
                 <li class="nav-item active">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" onclick="checkDropDown();" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-secondary" onclick="checkDropDown();" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                             Import custom database backup
                         </button>
-                        <ul id="dropdownMenuButtonMenu">
+                        <ul id="dropdown-menu" class="list-group">
                             <?php
                             if ($connection) {
                                 $query = $connection->prepare(" SHOW TABLES FROM `maintenances_supervisor_dbms` ");
@@ -29,7 +33,7 @@ $reader->setReadDataOnly(true);
                                     $i = 1;
                                     while ($row = $query->fetchObject()) {
                                         if (!str_contains($row->Tables_in_maintenances_supervisor_dbms, "view") && !str_contains($row->Tables_in_maintenances_supervisor_dbms, "_v_")) { ?>
-                                            <li><a class="dropdown-item" href="?Controller=<?php echo $row->Tables_in_maintenances_supervisor_dbms; ?>">
+                                            <li class="list-group-item <?php if(str_contains($_SERVER['REQUEST_URI'],'='.$row->Tables_in_maintenances_supervisor_dbms.'')) echo "active"; ?>"><a class="dropdown-item  <?php if(str_contains($_SERVER['REQUEST_URI'],'='.$row->Tables_in_maintenances_supervisor_dbms.'')) echo "active"; ?>" href="?Controller=<?php echo $row->Tables_in_maintenances_supervisor_dbms; ?>">
                                                     <?php echo " Table ( " . $i . " ) => " . $row->Tables_in_maintenances_supervisor_dbms; ?>
                                                 </a></li>
                             <?php $i = $i + 1;
@@ -44,10 +48,9 @@ $reader->setReadDataOnly(true);
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="?Controller=All">Import all database tables backup</a>
                 </li>
-
-        </div>
-
-        <div class="container">
+                </ul>
+            </div>
+            <div class="container ">
             <h1>
                 Operation logs:
             </h1>
@@ -188,6 +191,6 @@ $reader->setReadDataOnly(true);
             }
             ?>
 
+</div>
         </div>
     </div>
-</div>

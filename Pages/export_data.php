@@ -57,25 +57,29 @@ function ExportData($table)
 }
 ?>
 
-<div class="container">
-    <div class="navbar navbar-default" role="navigation">
+<div class="container ">
+    <div class="navbar-light bg-light" role="navigation">
         <div class="container-fluid">
-        Export Data <br/>
+<h2>Export Data </h2><br/>
+        </div>
+    </div>
+    <div class="navbar-light bg-light" role="navigation">
+        <div class="container-fluid">
             <ul class="nav nav-tabs">
 
                 <li class="nav-item active">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" onclick="checkDropDown();" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-secondary" onclick="checkDropDown();" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                             Export custom database backup
                         </button>
-                        <ul id="dropdownMenuButtonMenu">
+                        <ul class="list-group" id="dropdownMenuButtonMenu">
                             <?php
                             if ($connection) {
                                 $query = $connection->prepare(" SHOW TABLES FROM `maintenances_supervisor_dbms` ");
                                 if ($query->execute()) {
                                     $i = 1;
                                     while ($row = $query->fetchObject()) { ?>
-                                        <li><a class="dropdown-item" href="?Controller=<?php echo $row->Tables_in_maintenances_supervisor_dbms; ?>">
+                                        <li class="list-group-item <?php if(str_contains($_SERVER['REQUEST_URI'],'='.$row->Tables_in_maintenances_supervisor_dbms.'')) echo "active"; ?>"><a class="dropdown-item  <?php if(str_contains($_SERVER['REQUEST_URI'],'='.$row->Tables_in_maintenances_supervisor_dbms.'')) echo "active"; ?>" href="?Controller=<?php echo $row->Tables_in_maintenances_supervisor_dbms; ?>">
                                                 <?php echo " Table ( " . $i . " ) => " . $row->Tables_in_maintenances_supervisor_dbms; ?>
                                             </a></li>
                             <?php $i = $i + 1;
@@ -89,9 +93,9 @@ function ExportData($table)
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="?Controller=All">Export all database tables backup</a>
                 </li>
-
-        </div>
-        <div class="container">
+            </ul>
+            </div>
+            <div class="container ">
             <h1>
                 Operation logs:
             </h1>
@@ -116,7 +120,7 @@ function ExportData($table)
             }
 
             ?>
-
+            </div>
         </div>
     </div>
-</div>
+    

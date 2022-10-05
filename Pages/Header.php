@@ -4,6 +4,7 @@
 
 error_reporting(E_ALL);
 
+
 $columns = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
 function getCellName($i)
 {
@@ -29,45 +30,51 @@ function getCellName($i)
 
     return $col;
 }
-
+if(!str_contains($_SERVER['REQUEST_URI'],"export") && !str_contains($_SERVER['REQUEST_URI'],"import"))
+    $dir='';
+else
+    $dir="../";
 ?>
 <html>
-
 <head>
     <title>Excel Import/Export Data</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/bootstrap/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="/bootstrap/css/phpspreadsheet.css" />
-    <script src="/bootstrap/js/jquery.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="<?php echo $dir; ?>vendor/twbs/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="<?php echo $dir; ?>vendor/twbs/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="<?php echo $dir; ?>vendor/twbs/bootstrap/dist/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="<?php echo $dir; ?>vendor/twbs/bootstrap/dist/css/phpspreadsheet.css" />
+    <script src="<?php echo $dir; ?>vendor/twbs/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="<?php echo $dir; ?>vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
 
 </head>
 
 <div class="container">
-    <div class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="https://github.com/RasheedAlwahbany">Eng.Rasheed Al-Wahbany</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
             </div>
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/">Home</a>
+            <ul class="nav nav-tabs collapse navbar-collapse">
+                <li class="nav-item <?php if(!str_contains($_SERVER['REQUEST_URI'],"export") && !str_contains($_SERVER['REQUEST_URI'],"import")) echo "active"; ?>">
+                    <a class="nav-link <?php if(!str_contains($_SERVER['REQUEST_URI'],"export") && !str_contains($_SERVER['REQUEST_URI'],"import")) echo "active"; ?>" aria-current="page" href="/">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/Pages/export_data.php">Export Data To Excel</a>
+                <li class="nav-item <?php if(str_contains($_SERVER['REQUEST_URI'],"export")) echo "active"; ?>">
+                    <a class="nav-link <?php if(str_contains($_SERVER['REQUEST_URI'],"export")) echo "active"; ?>" href="/Pages/export_data.php">Export Data To Excel</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/Pages/import_data.php">Import Data From Excel</a>
+                <li class="nav-item  <?php if(str_contains($_SERVER['REQUEST_URI'],"import")) echo "active"; ?>">
+                    <a class="nav-link <?php if(str_contains($_SERVER['REQUEST_URI'],"import")) echo "active"; ?>" href="/Pages/import_data.php">Import Data From Excel</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Info</a>
                 </li>
             </ul>
         </div>
-    </div>
+</nav>
 
 
     <?php

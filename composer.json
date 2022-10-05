@@ -1,6 +1,7 @@
 {
     "require": {
         "phpoffice/phpspreadsheet": "^1.25",
-        "yidas/phpspreadsheet-helper": "^1.3"
+        "yidas/phpspreadsheet-helper": "^1.3",
+        "twbs/bootstrap": "5.0.1"
     }
 }
