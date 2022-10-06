@@ -36,7 +36,7 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: composer install
+      - run: curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
       - run: composer require phpoffice/phpspreadsheet
       
 
