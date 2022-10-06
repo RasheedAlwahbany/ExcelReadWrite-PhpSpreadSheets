@@ -4,11 +4,13 @@ require_once 'Header.php';
 require '../vendor/autoload.php';
 
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
-
+if($connection){
+try{
 $reader = new Xlsx();
 $reader->setReadDataOnly(true);
 
 ?>
+<br/><br/><br/>
 
 <div class="container ">
     <div class="navbar-light bg-light" role="navigation">
@@ -195,5 +197,10 @@ $reader->setReadDataOnly(true);
         </div>
     </div>
 </div>
-<?php include("footer.php");?>
+<?php 
+}catch(Exception $ex){
+
+}
+}
+include("footer.php");?>
 <!-- Eng.Rasheed Al-Wahbany &copy;2022 -->

@@ -1,8 +1,7 @@
 <?php
 // Eng.Rasheed Al-Wahbany &copy;2022
-
 error_reporting(E_ALL);
-
+try{
 $columns = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
 function getCellName($i)
 {
@@ -85,3 +84,7 @@ else
         mkdir("../DataBackup");
 
  // Eng.Rasheed Al-Wahbany &copy;2022
+
+}catch(Exception $ex){
+    $connection=false;
+}

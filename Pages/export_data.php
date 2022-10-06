@@ -2,9 +2,11 @@
 // Eng.Rasheed Al-Wahbany &copy;2022
 require_once 'Header.php';
 require '../vendor/autoload.php';
-
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
+if($connection){
+    try{
 
 function ExportData($table)
 {
@@ -13,7 +15,6 @@ function ExportData($table)
     $spreadsheet = new Spreadsheet();
     $sheet = $spreadsheet->getActiveSheet();
     $writer = new Xlsx($spreadsheet);
-    if ($connection) {
         $query = $connection->prepare("SELECT * FROM " . $table);
         if ($query->execute()) {
             $is_header = true;
@@ -52,11 +53,10 @@ function ExportData($table)
                 return false;
             }
         }
-    }
     return true;
 }
 ?>
-
+<br/><br/><br/>
 <div class="container ">
     <div class="navbar-light bg-light" role="navigation">
         <div class="container-fluid">
@@ -107,10 +107,9 @@ function ExportData($table)
                 if ($_GET['Controller'] != "All") {
                     $error = ExportData($_GET['Controller']);
                 } else {
-                    $query = $connection->prepare("SHOW TABLES FROM `maintenances_supervisor_dbms` ");
+                    $query = $connection->prepare(" SHOW TABLES FROM `maintenances_supervisor_dbms`  ");
                     if ($query->execute()) {
                         while ($row = $query->fetchObject()) {
-                            // if(!str_contains($row->Tables_in_maintenances_supervisor_dbms, "view"))
                             $error = ExportData($row->Tables_in_maintenances_supervisor_dbms);
                         }
                     }
@@ -125,5 +124,10 @@ function ExportData($table)
     </div>
 </div>
 
-<?php include("footer.php");?>
+<?php 
+}catch(Exception $ex){
+}
+}
+
+include("footer.php");?>
 <!-- Eng.Rasheed Al-Wahbany &copy;2022 -->
