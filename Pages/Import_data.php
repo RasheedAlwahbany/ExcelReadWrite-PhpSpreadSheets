@@ -34,8 +34,8 @@ $reader->setReadDataOnly(true);
                                 if ($query->execute()) {
                                     $i = 1;
                                     while ($row = $query->fetchObject()) {
-                                        if (!str_contains($row->Tables_in_maintenances_supervisor_dbms, "view") && !str_contains($row->Tables_in_maintenances_supervisor_dbms, "_v_")) { ?>
-                                            <li class="list-group-item <?php if (str_contains($_SERVER['REQUEST_URI'], '=' . $row->Tables_in_maintenances_supervisor_dbms . '')) echo "active"; ?>"><a class="dropdown-item  <?php if (str_contains($_SERVER['REQUEST_URI'], '=' . $row->Tables_in_maintenances_supervisor_dbms . '')) echo "active"; ?>" href="?Controller=<?php echo $row->Tables_in_maintenances_supervisor_dbms; ?>">
+                                        if (!strpos($row->Tables_in_maintenances_supervisor_dbms, "view") && !strpos($row->Tables_in_maintenances_supervisor_dbms, "_v_")) { ?>
+                                            <li class="list-group-item <?php if (strpos($_SERVER['REQUEST_URI'], '=' . $row->Tables_in_maintenances_supervisor_dbms . '')) echo "active"; ?>"><a class="dropdown-item  <?php if (strpos($_SERVER['REQUEST_URI'], '=' . $row->Tables_in_maintenances_supervisor_dbms . '')) echo "active"; ?>" href="?Controller=<?php echo $row->Tables_in_maintenances_supervisor_dbms; ?>">
                                                     <?php echo " Table ( " . $i . " ) => " . $row->Tables_in_maintenances_supervisor_dbms; ?>
                                                 </a></li>
                             <?php $i = $i + 1;
@@ -175,7 +175,7 @@ $reader->setReadDataOnly(true);
                     if ($query->execute()) {
                         $i = 1;
                         while ($row = $query->fetchObject()) {
-                            if (!str_contains($row->Tables_in_maintenances_supervisor_dbms, "view") && !str_contains($row->Tables_in_maintenances_supervisor_dbms, "_v_")) {
+                            if (!strpos($row->Tables_in_maintenances_supervisor_dbms, "view") && !strpos($row->Tables_in_maintenances_supervisor_dbms, "_v_")) {
                                 if (file_exists("../DataBackup/" . $row->Tables_in_maintenances_supervisor_dbms . ".xlsx")) {
                                     $spreadsheet = $reader->load("../DataBackup/" . $row->Tables_in_maintenances_supervisor_dbms . ".xlsx");
                                     $sheet = $spreadsheet->getActiveSheet();

@@ -27,7 +27,7 @@ function getCellName($i)
 
     return $col;
 }
-if (!str_contains($_SERVER['REQUEST_URI'], "export") && !str_contains($_SERVER['REQUEST_URI'], "import"))
+if (!strpos($_SERVER['REQUEST_URI'], "export") && !strpos($_SERVER['REQUEST_URI'], "import"))
     $dir = '';
 else
     $dir = "../";
@@ -58,14 +58,14 @@ else
                 </button>
             </div>
             <ul class="nav nav-tabs collapse navbar-collapse">
-                <li class="nav-item <?php if (!str_contains($_SERVER['REQUEST_URI'], "export") && !str_contains($_SERVER['REQUEST_URI'], "import")) echo "active"; ?>">
-                    <a class="nav-link <?php if (!str_contains($_SERVER['REQUEST_URI'], "export") && !str_contains($_SERVER['REQUEST_URI'], "import")) echo "active"; ?>" aria-current="page" href="/">Home</a>
+                <li class="nav-item <?php if (!strpos($_SERVER['REQUEST_URI'], "export") && !strpos($_SERVER['REQUEST_URI'], "import")) echo "active"; ?>">
+                    <a class="nav-link <?php if (!strpos($_SERVER['REQUEST_URI'], "export") && !strpos($_SERVER['REQUEST_URI'], "import")) echo "active"; ?>" aria-current="page" href="/">Home</a>
                 </li>
-                <li class="nav-item <?php if (str_contains($_SERVER['REQUEST_URI'], "export")) echo "active"; ?>">
-                    <a class="nav-link <?php if (str_contains($_SERVER['REQUEST_URI'], "export")) echo "active"; ?>" href="/Pages/export_data.php">Export Data To Excel</a>
+                <li class="nav-item <?php if (strpos($_SERVER['REQUEST_URI'], "export")) echo "active"; ?>">
+                    <a class="nav-link <?php if (strpos($_SERVER['REQUEST_URI'], "export")) echo "active"; ?>" href="/Pages/export_data.php">Export Data To Excel</a>
                 </li>
-                <li class="nav-item  <?php if (str_contains($_SERVER['REQUEST_URI'], "import")) echo "active"; ?>">
-                    <a class="nav-link <?php if (str_contains($_SERVER['REQUEST_URI'], "import")) echo "active"; ?>" href="/Pages/import_data.php">Import Data From Excel</a>
+                <li class="nav-item  <?php if (strpos($_SERVER['REQUEST_URI'], "import")) echo "active"; ?>">
+                    <a class="nav-link <?php if (strpos($_SERVER['REQUEST_URI'], "import")) echo "active"; ?>" href="/Pages/import_data.php">Import Data From Excel</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#page-logs">Operation logs</a>

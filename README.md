@@ -1,4 +1,3 @@
-
 # Excel Read Write (PhpSpreadSheets)
 
 PhpSpreadsheet is a library written in pure PHP and offers a set of classes that
@@ -15,10 +14,15 @@ See the `composer.json` for other requirements.
 Use [composer](https://getcomposer.org) to install PhpSpreadsheet into your project: `<br/>`
 or by cmd:
 
-`php -r "readfile('https://getcomposer.org/installer');" | php`
+```sh
+php -r "readfile('https://getcomposer.org/installer');" | php
+```
+
 `<br/>`
 
-`composer require yidas/phpspreadsheet-helper`
+```sh
+composer require yidas/phpspreadsheet-helper
+```
 
 ```sh
 composer require phpoffice/phpspreadsheet
@@ -51,7 +55,9 @@ See [CLI vs Application run-time](https://php.watch/articles/composer-platform-c
 
 ## Runnig on localhost
 
-`php -S localhost:8000`
+```sh
+php -S localhost:8000
+```
 
 ### Additional Installation Options
 
@@ -65,10 +71,9 @@ Export data from **MySQL DB** into **Excel Files**.
 
 import data from **Excel Files** into **MySQL DB**.
 
-
 ## Documentation
 
-Read more about it, including install instructions, in the [official documentation](https://phpspreadsheet.readthedocs.io). 
+Read more about it, including install instructions, in the [official documentation](https://phpspreadsheet.readthedocs.io).
 
  Created using:
 
@@ -76,14 +81,13 @@ Read more about it, including install instructions, in the [official documentati
             Bootstrap 5.
             PhpOffice\PhpSpreadsheet\Spreadsheet.  
             PhpOffice\PhpSpreadsheet\Writer\Xlsx.  
-            Composer.    
+            Composer.  
 ```
-
 
 ## PHPExcel vs PhpSpreadsheet ?
 
 PhpSpreadsheet is the next version of PHPExcel. It breaks compatibility to dramatically improve the code base quality (namespaces, PSR compliance, use of latest PHP language features, etc.).
 
-# Excel Read Write - Php Spread Sheets 
+# Excel Read Write - Php Spread Sheets
 
 Excel Read Write PHP Spread Sheets Full

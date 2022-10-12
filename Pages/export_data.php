@@ -79,7 +79,7 @@ function ExportData($table)
                                 if ($query->execute()) {
                                     $i = 1;
                                     while ($row = $query->fetchObject()) { ?>
-                                        <li class="list-group-item <?php if (str_contains($_SERVER['REQUEST_URI'], '=' . $row->Tables_in_maintenances_supervisor_dbms . '')) echo "active"; ?>"><a class="dropdown-item  <?php if (str_contains($_SERVER['REQUEST_URI'], '=' . $row->Tables_in_maintenances_supervisor_dbms . '')) echo "active"; ?>" href="?Controller=<?php echo $row->Tables_in_maintenances_supervisor_dbms; ?>">
+                                        <li class="list-group-item <?php if (strpos($_SERVER['REQUEST_URI'], '=' . $row->Tables_in_maintenances_supervisor_dbms . '')) echo "active"; ?>"><a class="dropdown-item  <?php if (strpos($_SERVER['REQUEST_URI'], '=' . $row->Tables_in_maintenances_supervisor_dbms . '')) echo "active"; ?>" href="?Controller=<?php echo $row->Tables_in_maintenances_supervisor_dbms; ?>">
                                                 <?php echo " Table ( " . $i . " ) => " . $row->Tables_in_maintenances_supervisor_dbms; ?>
                                             </a></li>
                             <?php $i = $i + 1;
