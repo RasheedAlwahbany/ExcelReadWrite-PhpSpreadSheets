@@ -86,9 +86,13 @@ $reader->setReadDataOnly(true);
                 function checkItem($table, $column, $value)
                 {
                     global $connection;
-                    $query = $connection->prepare("SELECT * FROM " . $table . " WHERE  " . $column . "=" . $value);
+                    $query = $connection->prepare("SELECT * FROM " . $table . " WHERE  " . $column . "=:id");
+                    $query->bindParam(":id",$value);
                     if ($query->execute()) {
+                        if($query->rowCount()>0)
                         return true;
+                        
+                        return false;
                     }
 
                     return false;
@@ -110,8 +114,13 @@ $reader->setReadDataOnly(true);
                                 else {
                                     if ($val[$i] == 0 || empty($val[$i]))
                                         $item .= 'NULL';
-                                    else
-                                        $item .= "'" . $val[$i] . "'";
+                                    else{
+                                        if(!is_numeric($val[$i]))
+                                            $item .= "'" . $val[$i]."'";
+                                        else
+                                            $item .= "" . $val[$i];
+
+                                    }
                                 }
                             } else {
                                 if ($row_index == 0)
@@ -119,8 +128,13 @@ $reader->setReadDataOnly(true);
                                 else {
                                     if (empty($val[$i]))
                                         $item .= ",NULL";
-                                    else
-                                        $item .= ",'" . $val[$i] . "'";
+                                    else{
+                                        if(!is_numeric($val[$i]))
+                                            $item .= ",'" . $val[$i] . "'";
+                                        else
+                                            $item .= "," . $val[$i];
+
+                                    }
                                 }
                             }
                             $i = $i + 1;
@@ -140,6 +154,7 @@ $reader->setReadDataOnly(true);
                                         $update_values .= "," . $table_cols[$i] . "=" . $item[$i];
                                     $i = $i + 1;
                                 }
+                                
                                 if (!empty($update_values)) {
                                     if (updateItem($table, $update_values))
                                         echo "<br/> Update ( " . $item_c . " ) succesfully.<br/>";
