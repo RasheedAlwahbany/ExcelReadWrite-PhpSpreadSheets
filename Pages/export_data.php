@@ -28,11 +28,14 @@ function ExportData($table)
                     $col = getCellName($i) . $columns[$i];
                     if ($is_header) {
                         $sheet->setCellValue($col . '' . $row_index, $key);
+                        $sheet->setCellValue($col . '' . ($row_index+1), $value);
                     } else {
                         $sheet->setCellValue($col . '' . $row_index, $value);
                     }
                     $i = $i + 1;
                 }
+                if($is_header)
+                    $row_index = $row_index+1;
                 $is_header = false;
                 $row_index = $row_index + 1;
             }
