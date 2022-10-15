@@ -1,7 +1,12 @@
 <?php
 // Eng.Rasheed Al-Wahbany &copy;2022
+session_start();
 error_reporting(E_ALL);
 try{
+if(!empty($_GET['logout'])){
+    session_unset();
+    echo "<script>document.location='http://localhost:8000/';</script>";
+}
 $columns = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
 function getCellName($i)
 {
@@ -61,6 +66,7 @@ else
                 <li class="nav-item <?php if (!strpos($_SERVER['REQUEST_URI'], "export") && !strpos($_SERVER['REQUEST_URI'], "import")) echo "active"; ?>">
                     <a class="nav-link <?php if (!strpos($_SERVER['REQUEST_URI'], "export") && !strpos($_SERVER['REQUEST_URI'], "import")) echo "active"; ?>" aria-current="page" href="/">Home</a>
                 </li>
+                <?php if(!empty($_SESSION['USERINFO'])){ ?>
                 <li class="nav-item <?php if (strpos($_SERVER['REQUEST_URI'], "export")) echo "active"; ?>">
                     <a class="nav-link <?php if (strpos($_SERVER['REQUEST_URI'], "export")) echo "active"; ?>" href="/Pages/export_data.php">Export Data To Excel</a>
                 </li>
@@ -70,13 +76,20 @@ else
                 <li class="nav-item">
                     <a class="nav-link" href="#page-logs">Operation logs</a>
                 </li>
+                <li class="nav-item justify-content-left">
+                    <a class="nav-link" href="http://localhost:8000/?logout=1" onclick="">Log Out</a>
+                </li>
+                <?php } ?>
             </ul>
         </div>
     </nav>
 
 
     <?php
-
+function o_check($p, $p_hashed)
+{
+    return password_verify($p, $p_hashed);
+}
     $connection = new pdo("mysql:host=localhost;dbname=maintenances_supervisor_dbms;port=3306;charset=utf8", "root", "");
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, true);

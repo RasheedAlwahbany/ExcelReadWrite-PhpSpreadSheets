@@ -17,7 +17,7 @@ require_once 'Pages/Header.php';
 <body class="container">
     <div class="navbar-light bg-light" role="navigation">
         <div class="container-fluid"><br/><br/><br/><br/>
-            <h2>Welcome to Export/Import Data To/From Excel files From/To Mysql Database</h2>
+            <!-- <h2>Welcome to Export/Import Data To/From Excel files From/To Mysql Database</h2>
             <p>
                 Created using:
             <pre>
@@ -26,7 +26,10 @@ require_once 'Pages/Header.php';
             use PhpOffice\PhpSpreadsheet\Writer\Xlsx.
             Composer.
         </pre>
-            </p>
+            </p> -->
+            
+            <?php if(empty($_SESSION['USERINFO'])) include ("login.php") ; ?>
+            <br/><br/>
         </div>
     </div>
 
