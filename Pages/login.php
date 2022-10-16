@@ -44,10 +44,9 @@ if(!empty($_POST['Controller'])){
                 $search = false;
         }else
             $search = false;
-
         if ($search) {
-            echo "<script>alert('Welcome bro');
-            document.location='http://localhost:8000/';
+            echo "<script>alert('Welcome Home Dair ( ".$_POST['UserEmail']." )');
+            document.location='$main_url';
             </script>";
         } else {
             $response_type = "Oparation Error";

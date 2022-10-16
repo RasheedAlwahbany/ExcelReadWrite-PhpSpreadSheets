@@ -2,10 +2,11 @@
 // Eng.Rasheed Al-Wahbany &copy;2022
 session_start();
 error_reporting(E_ALL);
+$main_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 try{
 if(!empty($_GET['logout'])){
     session_unset();
-    echo "<script>document.location='http://localhost:8000/';</script>";
+    echo "<script>document.location='".$main_url."';</script>";
 }
 $columns = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
 function getCellName($i)
@@ -62,7 +63,7 @@ else
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-            <ul class="nav nav-tabs collapse navbar-collapse">
+            <ul class="nav nav-tabs collapse navbar-collapse" id="navbarText">
                 <li class="nav-item <?php if (!strpos($_SERVER['REQUEST_URI'], "export") && !strpos($_SERVER['REQUEST_URI'], "import")) echo "active"; ?>">
                     <a class="nav-link <?php if (!strpos($_SERVER['REQUEST_URI'], "export") && !strpos($_SERVER['REQUEST_URI'], "import")) echo "active"; ?>" aria-current="page" href="/">Home</a>
                 </li>
@@ -77,7 +78,7 @@ else
                     <a class="nav-link" href="#page-logs">Operation logs</a>
                 </li>
                 <li class="nav-item justify-content-left">
-                    <a class="nav-link" href="http://localhost:8000/?logout=1" onclick="">Log Out</a>
+                    <a class="nav-link" href="<?php echo $main_url."?logout=1"; ?>" onclick="">Log Out</a>
                 </li>
                 <?php } ?>
             </ul>
