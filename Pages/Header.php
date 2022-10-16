@@ -90,7 +90,7 @@ function o_check($p, $p_hashed)
 {
     return password_verify($p, $p_hashed);
 }
-    $connection = new pdo("mysql:host=localhost;dbname=maintenances_supervisor_dbms;port=3306;charset=utf8", "root", "");
+    $connection = new PDO("mysql:host=localhost;dbname=maintenances_supervisor_dbms;port=3306;charset=utf8", "root", "");
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, true);
     if (!is_dir('../DataBackup'))
